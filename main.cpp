@@ -28,7 +28,12 @@ void test();
 void ejemploPregunta();
 void preguntaFacil1();
 void preguntaFacil2();
+void preguntaFacil3();
+void preguntaFacil4();
 void preguntaIntermedia1();
+void preguntaIntermedia2();
+void preguntaIntermedia3();
+void preguntaIntermedia4();
 
 // Función main
 int main()
@@ -52,11 +57,30 @@ int main()
     preguntaFacil2();
     system("pause>nul");
     system("CLS");
-
+    
     preguntaIntermedia1();
     system("pause>nul");
     system("CLS");
-
+    
+    preguntaFacil4();
+    system("pause>nul");
+    system("CLS");
+    
+    preguntaFacil3();
+    system("pause>nul");
+    system("CLS");
+    
+    preguntaIntermedia2();
+    system("pause>nul");
+    system("CLS");
+    
+    preguntaIntermedia3();
+    system("pause>nul");
+    system("CLS");
+    
+    preguntaIntermedia4();
+    system("pause>nul");
+    system("CLS");
     return 0;
 }
 
@@ -105,9 +129,9 @@ void pantallaInicio()
     cout << "Bienvenido a Software Company Simulator 2022";
 
     gotoXY(22, 10);
-    cout << "En este juego tú eres el lider de una empresa de software";
+    cout << "En este juego t\243 eres el lider de una empresa de software";
     gotoXY(22, 11);
-    cout << "y, como lider, tú tomas las decisiones de la compañia.";
+    cout << "y, como lider, t\243 tomas las decisiones de la compañia.";
 
     gotoXY(32, 19);
     cout << "Presiona enter para continuar...";
@@ -248,6 +272,7 @@ void preguntaFacil1()
     // Control
     int o = control();
     if (o == 2)
+    
     {
         contador++;
         gotoXY(15, 21);
@@ -302,6 +327,156 @@ void preguntaIntermedia1()
     cout << "22";
     gotoXY(PREGUNTA2POSX, PREGUNTAPOSY);
     cout << "27";
+
+    // Control
+    int o = control();
+    if (o == 2)
+    {
+        contador++;
+        gotoXY(15, 21);
+        cout << "Incorrecto";
+    }
+    else
+    {
+        gotoXY(15, 21);
+        cout << "Correcto";
+    }
+}
+
+void preguntaFacil4()
+{
+    marco();
+
+    // Pregunta Nivel 2
+    gotoXY(15, 8);
+    cout << "Que reconoce el nivel de gestionado?";
+    
+    // Opciones
+    gotoXY(PREGUNTA1POSX, PREGUNTAPOSY);
+    cout << "Reconoce el proyecto gestionado \n\t y controlado durante el desarrollo del mismo \t definida, est\240 establecida y documentada";
+    gotoXY(PREGUNTA2POSX, PREGUNTAPOSY);
+    // Respuesta Nivel 3
+    cout << "La forma de desarrollar proyectos est\240";
+
+    // Control
+    int o = control();
+    if (o == 2)
+    {
+        contador++;
+        gotoXY(15, 16);
+        cout << "Incorrecto";
+    }
+    else
+    {
+        gotoXY(15, 16);
+        cout << "Correcto";
+    }
+}
+void preguntaFacil3()
+{
+    marco();
+
+    // Pregunta Nivel 2
+    gotoXY(15, 8);
+    cout << "Que procesos hay que implantar para alcanzar";
+    gotoXY(15, 9);
+    cout << "el nivel de gestionado?";
+    
+    // Opciones
+    gotoXY(PREGUNTA1POSX, PREGUNTAPOSY);
+    cout << "Gesti\242n de requisitos \n\t Planificaci\242n de proyectos \t\t\t  An\240lisis y resoluci\242n de las causas \n\t Seguimiento y control de proyectos \n\t Gesti\242n de proveedores";
+	cout << "\n\t Aseguramiento de la calidad \n\t Gesti\242n de la configuraci\242n";
+    gotoXY(PREGUNTA2POSX, PREGUNTAPOSY);
+    cout << "Innovaci\242n organizacional";
+
+    // Control
+    int o = control();
+    if (o == 2)
+    {
+        contador++;
+        gotoXY(15, 16);
+        cout << "Incorrecto";
+    }
+    else
+    {
+        gotoXY(15, 16);
+        cout << "Correcto";
+    }
+}
+
+void preguntaIntermedia2()
+{
+    marco();
+    // Pregunta Nivel 2
+    gotoXY(15, 8);
+    cout << "Selecciona la opci\242n que contiene las areas que conforman el nivel gestionado";
+    // Opciones
+    gotoXY(PREGUNTA1POSX, PREGUNTAPOSY);
+    cout << "Gestionar los requisitos \n\t Planificaci\242n del proyecto \t\t\t    Gesti\242n de proyectos cuantitativa \n\t Supervisi\242n y control del proyecto";
+	cout << "\n\t Gesti\242n de los acuerdos con proveedor \n\t Medici\242n y an\240lisis \n\t Asegurar la calidad del proceso y producto \n\t Gesti\242n de la configuraci\242n";
+    gotoXY(PREGUNTA2POSX, PREGUNTAPOSY);
+    cout << "Proceso organizacional del desarrollo";
+
+    // Control
+    int o = control();
+    if (o == 2)
+    {
+        contador++;
+        gotoXY(15, 16);
+        cout << "Incorrecto";
+    }
+    else
+    {
+        gotoXY(15, 16);
+        cout << "Correcto";
+    }
+}
+
+void preguntaIntermedia3()
+{
+    marco();
+
+    // Pregunta Nivel 3
+    gotoXY(15, 8);
+    cout << "Selecciona la opci\242n que contiene las areas que conforman el nivel definido";
+
+    // Opciones
+    gotoXY(PREGUNTA1POSX, PREGUNTAPOSY);
+    cout << "Performance de los procesos organizacionales \n\t Administraci\242n cuantitativa de proyectos\t    Administraci\242n de proceso";
+    cout << "\n\t\t\t\t\t\t\t    Administraci\242n de proyecto \n\t\t\t\t\t\t\t    Administraci\242n de soporte";
+    gotoXY(PREGUNTA2POSX, PREGUNTAPOSY);
+    cout << "Administraci\242n de ingenier\241a";
+
+    // Control
+    int o = control();
+    if (o == 2)
+    {
+        contador++;
+        gotoXY(15, 16);
+        cout << "Correcto";
+    }
+    else
+    {
+        gotoXY(15, 16);
+        cout << "Incorrecto";
+    }
+}
+
+void preguntaIntermedia4()
+{
+    marco();
+
+    // Pregunta Nivel 4
+    gotoXY(15, 8);
+    cout << "Que procesos hay que implantar para alcanzar";
+    gotoXY(15, 9);
+    cout << "el nivel de gestionado de forma cuantitativa?";
+
+    // Opciones
+    gotoXY(PREGUNTA1POSX, PREGUNTAPOSY);
+    cout << "Gesti\242n cuantitativa de proyectos \n\t Mejora de los procesos de la organizaci\242n \t\tSoluci\242n T\202cnica";
+    gotoXY(PREGUNTA2POSX, PREGUNTAPOSY);
+    cout << "Desarrollo de requisitos";
 
     // Control
     int o = control();
