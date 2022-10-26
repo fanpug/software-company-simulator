@@ -34,6 +34,7 @@ void preguntaIntermedia1();
 void preguntaIntermedia2();
 void preguntaIntermedia3();
 void preguntaIntermedia4();
+void final();
 
 // Función main
 int main()
@@ -45,14 +46,15 @@ int main()
     introduccion();
     system("pause>nul");
     system("CLS");
-
+/*
     ejemploPregunta();
     system("pause>nul");
     system("CLS");
-
+*/
     preguntaFacil1();
     system("pause>nul");
     system("CLS");
+    gotoXY(48, 14);
 
     preguntaFacil2();
     system("pause>nul");
@@ -61,7 +63,8 @@ int main()
     preguntaIntermedia1();
     system("pause>nul");
     system("CLS");
-    
+    gotoXY(48, 14);
+
     preguntaFacil4();
     system("pause>nul");
     system("CLS");
@@ -81,6 +84,9 @@ int main()
     preguntaIntermedia4();
     system("pause>nul");
     system("CLS");
+
+    final();
+    system("pause>nul");
     return 0;
 }
 
@@ -131,24 +137,26 @@ void pantallaInicio()
     gotoXY(22, 10);
     cout << "En este juego t\243 eres el lider de una empresa de software";
     gotoXY(22, 11);
-    cout << "y, como lider, t\243 tomas las decisiones de la compañia.";
+    cout << "y, como lider, t\243 debes saber lo esencial sobre gestion de procesos.";
 
     gotoXY(32, 19);
     cout << "Presiona enter para continuar...";
 }
 
-// Función introduccion, aqui se imprime una descripcion de la empresa que manejas como jugador y que decisiones tendras que tomar
+// Función introduccion, aqui se imprime una descripcion de la empresa que manejas como jugador y que decisiones tendras que tomar, o eso se suponia que iba a ser pero al parecer hicimos un examen en vez de un juego
 void introduccion()
 {
     marco();
     gotoXY(28, 8);
-    cout << "En esta pantalla da una pequeña introduccion";
+    cout << "Tendras que responder una serie de preguntas relacionadas";
     gotoXY(28, 9);
-    cout << "a como se juega el juego y que tipo de decisiones";
-    gotoXY(28, 9);
-    cout << "debera tomar el jugador como \"lider\" de la empresa";
+    cout << "a CMMI y sus niveles de certificación.";
+    gotoXY(28, 11);
+    cout << "Al final, tendras un contador con tu calificacion final.";
     gotoXY(28, 15);
-    cout << "... o esa es la idea...";
+    cout << "¿Estas a la altura de un nivel 5 CMMI?";
+    gotoXY(32, 19);
+    cout << "Presiona enter para comenzar...";
 }
 
 // Función control, esta función retorna la posicion en X de la flecha que representa la eleccion de una opcion. Si retorna 1 entonces escogió la opción de la izquierda, si retorna 2 entonces escogió la opción de la derecha
@@ -242,9 +250,9 @@ void ejemploPregunta()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 21);
         cout << "Excelente, los trabajadores deben resolver sus diferencias!";
+        contador++;
     }
     else
     {
@@ -272,9 +280,7 @@ void preguntaFacil1()
     // Control
     int o = control();
     if (o == 2)
-    
     {
-        contador++;
         gotoXY(15, 21);
         cout << "Incorrecto";
     }
@@ -282,6 +288,7 @@ void preguntaFacil1()
     {
         gotoXY(15, 21);
         cout << "Correcto";
+        contador++;
     }
 }
 
@@ -303,9 +310,9 @@ void preguntaFacil2()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 21);
         cout << "Correcto";
+        contador++;
     }
     else
     {
@@ -332,7 +339,6 @@ void preguntaIntermedia1()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 21);
         cout << "Incorrecto";
     }
@@ -340,6 +346,7 @@ void preguntaIntermedia1()
     {
         gotoXY(15, 21);
         cout << "Correcto";
+        contador++;
     }
 }
 
@@ -362,7 +369,6 @@ void preguntaFacil4()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 16);
         cout << "Incorrecto";
     }
@@ -370,6 +376,7 @@ void preguntaFacil4()
     {
         gotoXY(15, 16);
         cout << "Correcto";
+        contador++;
     }
 }
 void preguntaFacil3()
@@ -393,7 +400,6 @@ void preguntaFacil3()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 16);
         cout << "Incorrecto";
     }
@@ -401,6 +407,7 @@ void preguntaFacil3()
     {
         gotoXY(15, 16);
         cout << "Correcto";
+        contador++;
     }
 }
 
@@ -421,7 +428,6 @@ void preguntaIntermedia2()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 16);
         cout << "Incorrecto";
     }
@@ -429,6 +435,7 @@ void preguntaIntermedia2()
     {
         gotoXY(15, 16);
         cout << "Correcto";
+        contador++;
     }
 }
 
@@ -451,9 +458,9 @@ void preguntaIntermedia3()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 16);
         cout << "Correcto";
+        contador++;
     }
     else
     {
@@ -482,13 +489,29 @@ void preguntaIntermedia4()
     int o = control();
     if (o == 2)
     {
-        contador++;
         gotoXY(15, 21);
         cout << "Incorrecto";
+        
     }
     else
     {
         gotoXY(15, 21);
         cout << "Correcto";
+        contador++;
     }
+}
+
+// Función final, aqui mostramos el final y la puntuación del jugador en el cuestionario.
+void final()
+{
+    marco();
+    gotoXY(37, 8);
+    cout << "Y con esto llegamos al final.";
+    gotoXY(28, 11);
+    cout << "Gracias por jugar! Tu puntuación final fue:";
+    gotoXY(48, 14);
+    cout << contador << "/8";
+    
+    gotoXY(32, 20);
+    cout << "Presiona cualquier tecla para salir...";
 }
